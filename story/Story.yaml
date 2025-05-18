@@ -1,0 +1,85 @@
+start:
+  - play music nostalgia_loop fadein 1.5
+  - show bg_bedroom_wooden_dresser WITH FADE
+  - show nookie sad at center
+  - nookie says: It’s been... how long now? I don’t even remember the last time my screen lit up.
+  - nookie says: Once, I was everything.
+
+  - show flashback_snake_overlay at center
+  - nookie says: Snake. That pixel snake slithered for hours... They never got tired of me.
+
+  - show flashback_typing_overlay at center
+  - nookie says: To say 'hello'... you had to press 4 two times. Two times just for an H. Then you have to press 3 another two times...
+
+  - show flashback_music_overlay at center
+  - nookie says: And my ringtones? Iconic. Everyone turned when I sang. Especially when they tried making their own music.
+
+  - show bg_bedroom_open_dresser WITH FADE
+  - nookie says: Wait—someone’s opening the drawer?
+  - play sound drawer_creak
+
+  - show hand_reach_overlay at left
+  - nookie says: A hand... a human hand...
+
+  - show bg_bedroom_wooden_dresser WITH FADE
+  - play sound drawer_close
+  - nookie says: ...But they didn’t want me. Just rummaging. And now I’m alone. Again.
+
+  - show static_glitch at center
+  - play sound glitch_buzz
+  - mystery_voice says: Do you want to be loved again?
+
+  - menu:
+      Do you want to be loved again?:
+        - "Yes.": jump transformation
+        - "No...": jump deniedPath
+
+  - label deniedPath:
+      - menu:
+          Are you sure? Let me ask again. Do you want to be loved?:
+            - "Yes.": jump transformation
+
+  - label transformation:
+      - show bg_black WITH FADE
+      - play sound transformation_sparkle
+      - system says: Initiating Plush Protocol...
+
+      - show bg_transformation WITH FADE
+      - show nookie glitch at center
+      - nookie says: What’s happening...?
+
+      - show bg_logo_reveal WITH FADE
+      - show title_pixel_plushies
+      - text: Pixel Plushies – Nookie’s Journey Begins
+      - stop sound fadeout 1.0
+
+      - jump act1_intro
+
+
+endGame:
+  - deuzi says normal: Quickstart over!
+  - hide ALL:
+  - effect ROLLINGCREDITS:
+    endGame: true
+    text:
+      - RenJS.V2 created by
+      - lunafromthemoon
+      - null
+      - In collaboration with
+      - RockDaFox
+      - null
+      - Inspired by Ren'Py
+      - Powered by PhaserJS
+      - null
+      - null
+      - Thanks for playing
+      - The Quickstart Game
+      - null
+      - background art and cgs by
+      - konett
+      - null
+      - characters by
+      - Shida
+      - null
+      - music by
+      - Evan Schaeffer

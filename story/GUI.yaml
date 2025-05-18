@@ -1,0 +1,113 @@
+name: PixelPlushiesVN
+resolution:
+  - 800
+  - 600
+assetCounter: 44
+config:
+  hud:
+    - id: default # Choices
+      type: choices
+      asset: hud_choices
+      x: 42
+      y: 300
+      alignment: centered
+      separation: 10
+      sfx: none
+      chosenColor: '#535050'
+      text:
+        x: 0
+        y: 0
+        style:
+          font: fontsaudimat-mono
+          fontSize: 32px
+          fill: '#FFFFFF'
+          align: left
+          boundsAlignH: center
+          boundsAlignV: middle
+
+    - id: default # Message box
+      type: messageBox
+      asset: hud_messagebox
+      x: 40
+      y: 449
+      sfx: none
+      text:
+        x: 24
+        y: 24
+        style:
+          font: fontsaudimat-mono
+          fontSize: 20px
+          fill: '#89BAA8'
+          align: left
+          wordWrap: true
+          wordWrapWidth: '550'
+      ctc:
+        x: 570
+        y: 91
+        asset: hud_ctc
+
+    - id: default # Name box
+      type: nameBox
+      asset: hud_characternamebox
+      x: 84
+      y: 400
+      text:
+        x: 0
+        y: 0
+        style:
+          font: fontsaudimat-mono
+          fontSize: 26px
+          fill: '#FFFFFF'
+          align: left
+          boundsAlignH: center
+          boundsAlignV: middle
+
+    - type: button # Skip button
+      x: 688
+      y: 514
+      asset: hud_skip
+      binding: skip
+      
+  menus:
+    main:
+      - type: image
+        x: 0
+        'y': 0
+        asset: loaderbackground
+
+      - type: music
+        asset: music_memories
+
+      - type: button
+        x: 329
+        'y': 452
+        asset: menu_start
+        binding: start
+
+assets:
+  images:
+    loaderbackground:
+      name: loaderbackground
+      fileName: loading_screen.png
+        
+    menu_start:
+      name: menu_start
+      fileName: menu_start.png
+
+  spritesheets:
+    # Only include HUD ones if they're actually used via "hud_choices", "hud_messagebox", etc.
+    # If those refer to direct .pngs instead, this block can be removed entirely.
+
+  fonts:
+    fontsaudimat-mono:
+      fileName: fontsfontsaudimat-mono.ttf
+      name: fontsaudimat-mono
+
+  audio:
+    music_memories:
+      fileName: music_memories.mp3
+      name: music_memories
+      type: music
+
+madeWithRenJSBuilder: "2.0"
+assetsPath: assets/gui/

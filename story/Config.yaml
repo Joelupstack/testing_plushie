@@ -1,0 +1,164 @@
+positions:
+  OUTLEFT: #Outside of the screen, left side
+    x: -133
+    y: 600 #The y should be at the bottom of the screen
+  LEFT: 
+    x: 133
+    y: 600
+  DEFAULT:
+    x: 400
+    y: 600
+  CENTER: 
+    x: 400
+    y: 600
+  RIGHT: 
+    x: 666
+    y: 600
+  OUTRIGHT: #Outside of the screen, right side
+    x: 933
+    y: 600
+
+transitions:
+  defaults: # Default transition when showing/hiding
+    characters: FADE
+    backgrounds: FADE
+    cgs: FADE
+    music: FADE
+  say: CUT #How to change character expression in say action
+  # Transition to use when showing/hiding choices
+  visualChoices: FADE
+  textChoices: CUT
+  menus: FADE
+  # transitions can be skipped by the player by tapping
+  skippable: false
+
+# Fade transition time, in miliseconds
+fadetime : 750
+# Time in each action that waits (e.g. text and say) when skipping
+skiptime: 50
+# Time in each action that waits (e.g. text and say) when auto playing
+autotime: 150
+# If logChoices is true, previously chosen choices will be shown in a different color
+logChoices: true
+# Default waiting time for timeouts if not specified
+timeout: 5000
+# punctuation can add extra time when showing text in the message box, per special character
+punctuationMarks: [".",",","!","?",":","-"]
+# when a punctuation mark is shown, X extra puntuation wait times will be spent after adding the next character
+# the total amount of wait will be this value multiplied the text speed
+punctuationWait: 5
+
+precomputeBreakLines: true
+
+userPreferences:
+  textSpeed: 60
+  autoSpeed: 150
+  bgmv: 0.8
+  sfxv: 0.5
+  muted: false
+
+game:
+  name: "Pixel Plushies: Nookie's Story"
+  start: start
+
+font:
+  default: "press_start_2p" # or another readable pixel font
+  size: 22
+  color: "#f18f01" # the orange you picked
+
+colors:
+  default: "#f18f01"
+  narration: "#ffffff"
+  namebox: "#000000"
+
+backgrounds:
+  bg_bedroom_wooden_dresser: assets/backgrounds/bg_bedroom_wooden_dresser.jpg
+  bg_bedroom_open_dresser: assets/backgrounds/bg_bedroom_open_dresser.jpg
+  bg_black: assets/backgrounds/bg_black.jpg
+  bg_logo_reveal: assets/backgrounds/bg_logo_reveal.jpg
+  bg_playroom_colorful: assets/backgrounds/bg_playroom_colorful.jpg
+  bg_livingroom_cozy: assets/backgrounds/bg_livingroom_cozy.jpg
+  bg_box: assets/backgrounds/bg_box.jpg
+  bg_store_workshop: assets/backgrounds/bg_store_workshop.jpg
+  bg_store_front: assets/backgrounds/bg_store_front.jpg
+  bg_daycare_lobby: assets/backgrounds/bg_daycare_lobby.jpg
+  bg_daycare_lobby_night: assets/backgrounds/bg_daycare_lobby_night.jpg
+  bg_office: assets/backgrounds/bg_office.jpg
+  bg_box_nookie: assets/backgrounds/bg_box_nookie.jpg
+  bg_white: assets/backgrounds/bg_white.jpg
+  bg_recycling_center: assets/backgrounds/bg_recycling_center.jpg
+
+characters:
+  nookie:
+    displayName: "Nookie"
+    speechColour: "#f78b38"
+    looks:
+      default: assets/characters/nookie.png
+
+  adult_parent:
+    displayName: "Parent"
+    speechColour: "#bf4d28"
+    looks:
+      default: assets/characters/adult_parent.png
+
+  adult_shopkeeper:
+    displayName: "Shopkeeper"
+    speechColour: "#6a4c93"
+    looks:
+      default: assets/characters/adult_shopkeeper.png
+
+  adult_volunteer:
+    displayName: "Volunteer"
+    speechColour: "#008080"
+    looks:
+      default: assets/characters/adult_volunteer.png
+
+  adult_tester:
+    displayName: "Tester"
+    speechColour: "#b8860b"
+    looks:
+      default: assets/characters/adult_tester.png
+
+  adult_worker:
+    displayName: "Worker"
+    speechColour: "#4682b4"
+    looks:
+      default: assets/characters/adult_worker.png
+
+  child_home:
+    displayName: "Child"
+    speechColour: "#f4a261"
+    looks:
+      default: assets/characters/child_home.png
+
+  child_daycare:
+    displayName: "Daycare Kid"
+    speechColour: "#2a9d8f"
+    looks:
+      default: assets/characters/child_daycare.png
+
+  child_test_play_one:
+    displayName: "Two Tester Kid"
+    speechColour: "#e76f51"
+    looks:
+      default: assets/characters/child_test_play.png
+
+sprites:
+  flashback_snake_overlay: assets/sprites/flashback_snake_overlay.png
+  flashback_typing_overlay: assets/sprites/flashback_typing_overlay.png
+  flashback_music_overlay: assets/sprites/flashback_music_overlay.png
+  hand_reach_overlay: assets/sprites/hand_reach_overlay.png
+  static_glitch: assets/sprites/static_glitch.png
+
+sounds:
+  nostalgia_loop: "nostalgia_loop.mp3"
+  drawer_creak: "drawer_creak.mp3"
+  drawer_close: "drawer_close.mp3"
+  glitch_buzz: "glitch_buzz.mp3"
+  transformation_sparkle: "transformation_sparkle.mp3"
+  ui_click: "ui_click.mp3"           # For menu selections
+  ui_back: "ui_back.mp3"             # For back/cancel actions
+  ui_confirm: "ui_confirm.mp3"       # For confirming settings
+  ui_open_menu: "ui_open_menu.mp3"   # Optional: Opening main menu, etc.
+  ui_save: "ui_save.mp3"             # Optional: Save screen feedback
+
